@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "EDG waste calendar Dortmund",
+        "description": "Enter your address in Dortmund.",
+        "data": {
+          "street": "Street",
+          "house_number": "House number"
+        },
+        "data_description": {
+          "street": "e.g. \"Hohe Straße\" or \"Hohe Str.\"",
+          "house_number": "e.g. \"12\" or \"12a\""
+        }
+      },
+      "street": {
+        "title": "Select street",
+        "description": "Several streets match your input.",
+        "data": {
+          "street": "Street"
+        }
+      },
+      "house_number": {
+        "title": "Select house number",
+        "description": "House number \"{house_number}\" is listed differently for {street}. Please pick it from the list.",
+        "data": {
+          "house_number": "House number"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the EDG portal.",
+      "street_not_found": "Street not found in Dortmund."
+    },
+    "abort": {
+      "already_configured": "This address is already set up.",
+      "cannot_connect": "Could not reach the EDG portal.",
+      "street_not_found": "The EDG portal did not accept this address.",
+      "no_dates": "The EDG portal lists no collection dates for this address."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_collection": {
+        "name": "Next collection"
+      }
+    },
+    "calendar": {
+      "calendar": {
+        "name": "Waste calendar"
+      }
+    }
+  }
+}

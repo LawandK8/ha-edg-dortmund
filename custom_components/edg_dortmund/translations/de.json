@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "EDG Abfallkalender Dortmund",
+        "description": "Gib deine Adresse in Dortmund ein.",
+        "data": {
+          "street": "Straße",
+          "house_number": "Hausnummer"
+        },
+        "data_description": {
+          "street": "z. B. \"Hohe Straße\" oder \"Hohe Str.\"",
+          "house_number": "z. B. \"12\" oder \"12a\""
+        }
+      },
+      "street": {
+        "title": "Straße auswählen",
+        "description": "Mehrere Straßen passen zu deiner Eingabe.",
+        "data": {
+          "street": "Straße"
+        }
+      },
+      "house_number": {
+        "title": "Hausnummer auswählen",
+        "description": "Die Hausnummer \"{house_number}\" ist für {street} anders hinterlegt. Bitte wähle sie aus der Liste.",
+        "data": {
+          "house_number": "Hausnummer"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Das EDG-Kundenportal ist nicht erreichbar.",
+      "street_not_found": "Straße in Dortmund nicht gefunden."
+    },
+    "abort": {
+      "already_configured": "Diese Adresse ist bereits eingerichtet.",
+      "cannot_connect": "Das EDG-Kundenportal ist nicht erreichbar.",
+      "street_not_found": "Das EDG-Kundenportal kennt diese Adresse nicht.",
+      "no_dates": "Für diese Adresse liefert das EDG-Kundenportal keine Abfuhrtermine."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_collection": {
+        "name": "Nächste Abholung"
+      }
+    },
+    "calendar": {
+      "calendar": {
+        "name": "Abfallkalender"
+      }
+    }
+  }
+}

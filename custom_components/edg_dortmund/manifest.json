@@ -1,0 +1,11 @@
+{
+  "domain": "edg_dortmund",
+  "name": "EDG Abfallkalender Dortmund",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://www.edg.de/abfallkalender",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "1.0.0"
+}
