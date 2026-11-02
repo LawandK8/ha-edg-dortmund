@@ -15,8 +15,8 @@ Pro Adresse ein Gerät „EDG Abfall <Straße Nr>“ mit:
 | Entität | Inhalt |
 |---|---|
 | `sensor.…_restabfall`, `…_wertstoffe`, `…_bioabfall`, `…_altpapier` | Datum der nächsten Leerung (je nach Adresse nur die Tonnen, die es dort gibt) |
-| `sensor.…_next_collection` („Nächste Abholung“) | nächster Termin überhaupt und welche Tonne(n) |
-| `calendar.…_waste_calendar` („Abfallkalender“) | alle Termine als ganztägige Ereignisse |
+| `sensor.…_next_collection` („Nächste Abholung“) | nächste Tonne(n) und wann, z. B. `Wertstoffe · Mi. 04.11.` oder `Restabfall · morgen` |
+| `calendar.…_waste_calendar` („Abfallkalender“) | alle Termine als ganztägige Ereignisse. Zustand **An** = heute ist Abholtag, **Aus** = heute keine Abholung |
 
 Attribute der Tonnen-Sensoren: `days_until` (Tage bis zur Leerung),
 `upcoming` (alle kommenden Termine), `frequency`, `bin_size`.

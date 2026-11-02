@@ -25,3 +25,5 @@ async def test_hohe_strasse(hass, socket_enabled):
     assert r["type"] is FlowResultType.CREATE_ENTRY, r
     await hass.async_block_till_done()
     for s in hass.states.async_all(): print(s.entity_id, s.state)
+    nxt = hass.states.get("sensor.edg_abfall_baackweg_1_next_collection")
+    assert " · " in nxt.state and nxt.attributes["date"].startswith("2026")

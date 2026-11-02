@@ -87,12 +87,23 @@ class WasteSensor(CoordinatorEntity[EdgCoordinator], SensorEntity):
         }
 
 
+WEEKDAYS = ["Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa.", "So."]
+
+
+def _when(day: date) -> str:
+    days = _days_until(day)
+    if days == 0:
+        return "heute"
+    if days == 1:
+        return "morgen"
+    return f"{WEEKDAYS[day.weekday()]} {day:%d.%m.}"
+
+
 class NextCollectionSensor(CoordinatorEntity[EdgCoordinator], SensorEntity):
-    """Next collection of any bin."""
+    """Next collection of any bin, e.g. "Wertstoffe · Mi. 04.11."."""
 
     _attr_has_entity_name = True
     _attr_translation_key = "next_collection"
-    _attr_device_class = SensorDeviceClass.DATE
     _attr_attribution = ATTRIBUTION
     _attr_icon = "mdi:calendar-clock"
 
@@ -115,10 +126,17 @@ class NextCollectionSensor(CoordinatorEntity[EdgCoordinator], SensorEntity):
         return first, names
 
     @property
-    def native_value(self) -> date | None:
-        return self._next()[0]
+    def native_value(self) -> str | None:
+        first, names = self._next()
+        if first is None:
+            return None
+        return f"{', '.join(names)} · {_when(first)}"
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
         first, names = self._next()
-        return {"days_until": _days_until(first), "types": names}
+        return {
+            "date": first.isoformat() if first else None,
+            "days_until": _days_until(first),
+            "types": names,
+        }
