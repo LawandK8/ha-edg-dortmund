@@ -1,11 +1,14 @@
 {
   "domain": "edg_dortmund",
   "name": "EDG Abfallkalender Dortmund",
-  "codeowners": [],
+  "codeowners": [
+    "@LawandK8"
+  ],
   "config_flow": true,
-  "documentation": "https://www.edg.de/abfallkalender",
+  "documentation": "https://github.com/LawandK8/ha-edg-dortmund",
   "integration_type": "service",
   "iot_class": "cloud_polling",
   "requirements": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "issue_tracker": "https://github.com/LawandK8/ha-edg-dortmund/issues"
 }
